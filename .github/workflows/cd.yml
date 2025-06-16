@@ -1,0 +1,38 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success' || github.event_ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install CMake
+      run: sudo apt-get update && sudo apt-get install -y cmake build-essential
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install Python Dependencies
+      run: |
+        python -m venv client/venv
+        source client/venv/bin/activate
+        pip install -r client/requirements.txt
+    - name: Build GameServer
+      run: cmake --build server/build
+    - name: Package Artifacts
+      run: |
+        # Example: Create a tarball of the server executable and client files
+        tar -czvf exploding-kittens-staging.tar.gz server/build/GameServer client/backend client/frontend
+    - name: Deploy to Staging
+      # This is a placeholder. Replace with actual deployment commands.
+      # Example: rsync -avz exploding-kittens-staging.tar.gz user@your-staging-server:/path/to/deploy
+      run: echo "Deploying to staging environment..."
