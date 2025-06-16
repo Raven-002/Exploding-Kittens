@@ -1,4 +1,5 @@
 {
     "cmake.sourceDirectory": "${workspaceFolder}/server",
     "cmake.buildDirectory": "${workspaceFolder}/server/build",
+    "pythonTestExplorer.testFramework": "pytest",
 }
