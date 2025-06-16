@@ -4,6 +4,9 @@
 *.exe
 *.out
 
+# Clangd
+.cache/
+
 # Python
 __pycache__/
 *.pyc
