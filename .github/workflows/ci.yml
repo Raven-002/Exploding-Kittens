@@ -38,7 +38,7 @@ jobs:
     - name: Run Python Backend Unit Tests
       run: |
         source client/venv/bin/activate
-        pytest client/tests/test_backend.py
+        PYTHONPATH=. pytest client/tests/test_backend.py
 
   integration-tests:
     runs-on: ubuntu-latest
@@ -68,7 +68,7 @@ jobs:
     - name: Start GameClient Backend in background
       run: |
         source client/venv/bin/activate
-        python client/backend/app.py &
+        PYTHONPATH=. python client/backend/app.py &
         echo "GameClient Backend started in background."
         sleep 5 # Give backend time to start
       shell: bash
