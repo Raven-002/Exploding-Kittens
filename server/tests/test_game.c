@@ -1,25 +1,25 @@
 #include <stdio.h>
-// Include Unity or CUnit headers here if used
-// #include "unity.h" 
-// #include "CUnit/Basic.h"
+/* Include Unity or CUnit headers here if used */
+/* #include "unity.h"  */
+/* #include "CUnit/Basic.h" */
 
 void test_dummy_game_function() {
-    // TEST_ASSERT_EQUAL_INT(1, 1); // Example Unity assertion
+    /* TEST_ASSERT_EQUAL_INT(1, 1); // Example Unity assertion */
     printf("Running dummy game test...\n");
 }
 
 int main() {
-    // UnityBegin("test_game.c");
-    // RUN_TEST(test_dummy_game_function);
-    // return UnityEnd();
+    /* UnityBegin("test_game.c"); */
+    /* RUN_TEST(test_dummy_game_function); */
+    /* return UnityEnd(); */
 
-    // CUnit setup example
-    // CU_initialize_registry();
-    // CU_pSuite pSuite = CU_add_suite("Game_Suite", 0, 0);
-    // CU_add_test(pSuite, "test_dummy_game_function", test_dummy_game_function);
-    // CU_basic_set_mode(CU_BRM_VERBOSE);
-    // CU_basic_run_tests();
-    // CU_cleanup_registry();
+    /* CUnit setup example */
+    /* CU_initialize_registry(); */
+    /* CU_pSuite pSuite = CU_add_suite("Game_Suite", 0, 0); */
+    /* CU_add_test(pSuite, "test_dummy_game_function", test_dummy_game_function); */
+    /* CU_basic_set_mode(CU_BRM_VERBOSE); */
+    /* CU_basic_run_tests(); */
+    /* CU_cleanup_registry(); */
 
     printf("Running C game tests.\n");
     test_dummy_game_function();

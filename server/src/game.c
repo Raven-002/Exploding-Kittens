@@ -3,5 +3,5 @@
 
 void handle_game_logic() {
     printf("Handling game logic...\n");
-    // Placeholder for game logic
+    /* Placeholder for game logic */
 }
